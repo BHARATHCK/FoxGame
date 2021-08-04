@@ -4,11 +4,9 @@
 
   In this case I will be using it to initialize the timer which decides a new activity for the FOX.
 */
-const TICK_RATE = 5000;
+import gameState from "./gameState";
 
-function tick() {
-    console.log('tick', Date.now());
-}
+const TICK_RATE = 5000;
 
 async function init() {
 
@@ -18,7 +16,7 @@ async function init() {
 
         const now = Date.now();
         if (nexttimeToTick <= now) {
-            tick();
+            gameState.tick();
             nexttimeToTick = now + TICK_RATE;
         }
 
