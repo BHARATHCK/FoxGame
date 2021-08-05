@@ -5,10 +5,12 @@
   In this case I will be using it to initialize the timer which decides a new activity for the FOX.
 */
 import gameState from "./gameState";
-
-const TICK_RATE = 5000;
+import { TICK_RATE } from "./constants";
+import initButtons from "./buttons";
 
 async function init() {
+
+    initButtons(gameState.handleUserAction);
 
     let nexttimeToTick = Date.now();
 
